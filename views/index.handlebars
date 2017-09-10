@@ -5,7 +5,7 @@ Create a button in index.handlebars that will submit the user input into the dat
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center" id="top-bar">
-      <h1>Eat-Da-Burger!</h1>
+      <h1>Grocery List</h1>
     </div>
     <div class="col-xs-6 text-center" class="task">
       <div class="row">
@@ -13,14 +13,15 @@ Create a button in index.handlebars that will submit the user input into the dat
           {{#unless this.devoured}}
             <div class="col-xs-9 textcenter">
               <pre>
-        {{this.id}}. {{this.burger_name}}
-        </pre>
+            {{this.id}}. {{this.burger_name}}
+          </pre>
             </div>
             <div class="col-xs-3 text-center">
               <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
                 <input type="hidden" name="burger_id" type="text" value= {{this.id}}>
                 <br>
-                <button type="submit" class="btn btn-default">DEVOUR</button>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
               </form>
             </div>
           {{/unless}}
@@ -43,12 +44,14 @@ Create a button in index.handlebars that will submit the user input into the dat
   <div class="row">
     <div class="col-xs-12 text-center enter_section">
       <form action="/burgers/create" method="POST">
-        <input type="text" name="burger_name" class="form-control" id="enter_text">
-        <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+        <input type="text" name="burger_name" class="form-control" id="enter_text" placeholder="add new grocery item">
+        <button type="submit" class="btn btn-primary" id="text-enter-button">Add new item</button>
       </form>
-      <p>Add your burger here!</p>
     </div>
-
   </div>
-
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <button type="submit" class="btn btn-warning" id="delete">Delete All</button>
+    </div>
+  </div>
 </div>

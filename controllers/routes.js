@@ -29,6 +29,12 @@ router.post('/burgers/create', function(req,res){
   })
 })
 
+router.delete("/", function(req, res) {
+  burgers.delete(condition, function() {
+    res.redirect("/");
+  });
+});
+
 //and export the router at the end of your file.
 module.exports = router;
 //
