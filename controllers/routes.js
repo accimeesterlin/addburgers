@@ -23,16 +23,19 @@ router.put('/burgers/update', function(req,res){
 })
 
 router.post('/burgers/create', function(req,res){
+
   burger.create(req.body.burger_name, function(result){
     console.log(result);
     res.redirect('/');
   })
 })
 
-router.delete("/", function(req, res) {
-  burgers.delete(condition, function() {
+router.post("/delete", function(req, res) {
+
+  burger.delete(function() {
     res.redirect("/");
   });
+
 });
 
 //and export the router at the end of your file.

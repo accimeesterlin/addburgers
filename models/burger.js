@@ -16,8 +16,8 @@ var burger = {
   create: function(name, cb) {
     orm.create('burgers', name, cb);
   },
-  delete: function(condition, cb) {
-    orm.delete("burgers", condition, function(res) {
+  delete: function(cb) {
+    orm.delete("burgers", function(res) {
       cb(res);
     });
   }

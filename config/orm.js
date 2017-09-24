@@ -25,9 +25,9 @@ var orm = {
       cb(result);
     })
   },
-  delete: function(table, condition, cb) {
-   var queryString = "DELETE FROM " + burgers;
-   queryString += condition;
+  delete: function(table, cb) {
+   var queryString = "DELETE FROM " + table;
+    // queryString += condition;
    connection.query(queryString, function(err, result) {
      if (err) {
        throw err;
